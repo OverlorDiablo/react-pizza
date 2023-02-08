@@ -37,15 +37,15 @@ export function PizzaBlock({ name, price, imageUrl, types, sizes }) {
           )}
         </ul>
         <ul>
-          {availableSizes.map((size, index) =>
+          {availableSizes.map((size) =>
             <li
               key={size}
-              onClick={() => onSelectSize(index)}
+              onClick={() => onSelectSize(size)}
               className={classNames({
-                'active': activeSize === index,
+                'active': activeSize === size,
                 'disabled': !sizes.includes(size)
               })}>
-              {size} см.
+              {size} см
             </li>
           )}
         </ul>
