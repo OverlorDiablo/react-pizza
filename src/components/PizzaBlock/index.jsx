@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+
 export function PizzaBlock({ name, price, imageUrl, types, sizes }) {
   const availableTypes = ['тонкое', 'традиционное'];
   const availableSizes = [26, 30, 40];
@@ -15,6 +16,8 @@ export function PizzaBlock({ name, price, imageUrl, types, sizes }) {
   const onSelectSize = (index) => {
     setActiveSize(index)
   };
+
+
 
   return (
     <div className="pizza-block">
