@@ -58,9 +58,9 @@ export function Home() {
           ? items.map((obj) => <PizzaBlock
             onClickAddPizza={handleAddPizzaToCart}
             key={obj.id}
-            addedCount={cartItems[obj.id] && cartItems[obj.id].length}
+            addedCount={cartItems[obj.id] && cartItems[obj.id].items.length}
             {...obj} />)
-          : Array(12)
+          : Array(4)
             .fill(0)
             .map((_, index) => <LoadingBlock key={index} />)}
       </div>

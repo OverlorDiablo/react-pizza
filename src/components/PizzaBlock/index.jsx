@@ -7,7 +7,7 @@ export function PizzaBlock({ id, name, price, imageUrl, types, sizes, onClickAdd
   const availableTypes = ['тонкое', 'традиционное'];
   const availableSizes = [26, 30, 40];
   const [activeType, setActiveType] = React.useState(types[0]);
-  const [activeSize, setActiveSize] = React.useState(0);
+  const [activeSize, setActiveSize] = React.useState(sizes[0]);
 
   const onSelectType = (index) => {
     setActiveType(index)
@@ -50,12 +50,12 @@ export function PizzaBlock({ id, name, price, imageUrl, types, sizes, onClickAdd
           )}
         </ul>
         <ul>
-          {availableSizes.map((size, index) =>
+          {availableSizes.map((size) =>
             <li
               key={size}
-              onClick={() => onSelectSize(index)}
+              onClick={() => onSelectSize(size)}
               className={classNames({
-                'active': activeSize === index,
+                'active': activeSize === size,
                 'disabled': !sizes.includes(size)
               })}>
               {size} см
